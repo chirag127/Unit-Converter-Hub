@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unit Converter Hub - Convert units instantly for length, weight, volume, temperature, and more. Perfect for students, professionals, and travelers.">
+    <meta name="keywords" content="unit converter, conversion calculator, measurement converter, length weight volume temperature">
+    <meta name="author" content="Chirag Singhal">
+    
+    <title>Unit Converter Hub - Instant Unit Conversions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    
+    <!-- Progressive Web App -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Unit Converter Hub">
+    <meta property="og:description" content="Convert units instantly for length, weight, volume, temperature, and more">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unit-converter-hub.com">
+    <meta property="og:image" content="/images/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unit Converter Hub">
+    <meta name="twitter:description" content="Convert units instantly for length, weight, volume, temperature, and more">
+    <meta name="twitter:image" content="/images/twitter-card.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="Unit Converter Hub" class="logo-image">
+                    <h1 class="logo-text">Unit Converter Hub</h1>
+                </div>
+                <nav class="nav">
+                    <button class="nav-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="#converter" class="nav-link">Converter</a></li>
+                        <li><a href="#favorites" class="nav-link">Favorites</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Convert Units Instantly</h2>
+                    <p class="hero-description">
+                        Professional unit converter for students, professionals, and travelers. 
+                        Convert length, weight, volume, temperature, and more with precision.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Converter Section -->
+        <section id="converter" class="converter-section">
+            <div class="container">
+                <div class="converter-container">
+                    <!-- Category Selection -->
+                    <div class="category-selector">
+                        <h3 class="section-title">Select Category</h3>
+                        <div class="category-grid" id="categoryGrid">
+                            <!-- Categories will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Conversion Interface -->
+                    <div class="conversion-interface" id="conversionInterface" style="display: none;">
+                        <div class="conversion-header">
+                            <h3 class="conversion-title" id="conversionTitle">Length Converter</h3>
+                            <button class="back-button" id="backButton">← Back to Categories</button>
+                        </div>
+
+                        <div class="conversion-form">
+                            <div class="input-group">
+                                <label for="fromValue" class="input-label">From</label>
+                                <div class="input-row">
+                                    <input type="number" id="fromValue" class="value-input" placeholder="Enter value" step="any">
+                                    <select id="fromUnit" class="unit-select">
+                                        <!-- Units will be loaded dynamically -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="swap-container">
+                                <button class="swap-button" id="swapButton" title="Swap units">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="toValue" class="input-label">To</label>
+                                <div class="input-row">
+                                    <input type="number" id="toValue" class="value-input" placeholder="Result" readonly>
+                                    <select id="toUnit" class="unit-select">
+                                        <!-- Units will be loaded dynamically -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conversion-actions">
+                            <button class="action-button primary" id="convertButton">Convert</button>
+                            <button class="action-button secondary" id="clearButton">Clear</button>
+                            <button class="action-button favorite" id="favoriteButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                Add to Favorites
+                            </button>
+                        </div>
+
+                        <div class="conversion-result" id="conversionResult" style="display: none;">
+                            <div class="result-content">
+                                <div class="result-value" id="resultValue"></div>
+                                <div class="result-formula" id="resultFormula"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites" class="favorites-section">
+            <div class="container">
+                <div class="favorites-container">
+                    <div class="favorites-header">
+                        <h3 class="section-title">Favorite Conversions</h3>
+                        <div class="favorites-actions">
+                            <button class="action-button secondary" id="exportFavorites">Export</button>
+                            <button class="action-button secondary" id="importFavorites">Import</button>
+                            <input type="file" id="importFile" accept=".json" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="favorites-grid" id="favoritesGrid">
+                        <div class="empty-state" id="emptyFavorites">
+                            <div class="empty-icon">⭐</div>
+                            <h4>No favorites yet</h4>
+                            <p>Add conversions to your favorites for quick access</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <h3 class="section-title">About Unit Converter Hub</h3>
+                    <div class="about-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📏</div>
+                            <h4>Comprehensive Units</h4>
+                            <p>Convert between metric, imperial, and specialized units across multiple categories</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Real-time Conversion</h4>
+                            <p>Instant conversions as you type with high precision calculations</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h4>Mobile Optimized</h4>
+                            <p>Responsive design that works perfectly on all devices and screen sizes</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⭐</div>
+                            <h4>Favorites System</h4>
+                            <p>Save frequently used conversions for quick access and better productivity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 Unit Converter Hub. Created by <a href="https://github.com/chirag127" target="_blank">Chirag Singhal</a></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/chirag127/Unit-Converter-Hub" target="_blank">GitHub</a>
+                    <a href="#about">About</a>
+                    <a href="/api/health" target="_blank">API Status</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="/js/config.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/favorites.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "name": "Unit Converter Hub",
+  "short_name": "Unit Converter",
+  "description": "Convert units instantly for length, weight, volume, temperature, and more. Perfect for students, professionals, and travelers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "favicon"
+    },
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple-touch-icon"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Unit Converter Hub - Desktop View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Length Converter",
+      "short_name": "Length",
+      "description": "Convert length units",
+      "url": "/#converter",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Weight Converter",
+      "short_name": "Weight",
+      "description": "Convert weight units",
+      "url": "/#converter",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Temperature Converter",
+      "short_name": "Temperature",
+      "description": "Convert temperature units",
+      "url": "/#converter",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Favorites",
+      "short_name": "Favorites",
+      "description": "Access favorite conversions",
+      "url": "/#favorites",
+      "icons": [
+        {
+          "src": "/images/logo.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}
